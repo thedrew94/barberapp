@@ -1,0 +1,6 @@
+# Ignore builds:
+build
+coverage
+
+# Ignore all html files:
+*.html
