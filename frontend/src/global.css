@@ -1,5 +1,5 @@
 /* IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 /* CUSTOM DEFAULT STYLES VARIABLES */
 :root {
@@ -21,19 +21,10 @@
   --font-size-p: 10px; */
 }
 
-/* <weight>: Use a value from 100 to 900 */
-.roboto-condensed {
-  font-family: 'Roboto Condensed', sans-serif;
+.lexend-font {
+  font-family: 'Lexend', sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
-  font-style: normal;
-}
-
-/* <weight>: Use a value from 400 to 700 */
-.edu-au-vic-wa-nt-arrows {
-  font-family: 'Edu AU VIC WA NT Arrows', cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -74,7 +65,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: 'Roboto Condensed', sans-serif, serif;
+  font-family: 'Lexend', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;

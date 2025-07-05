@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -6,8 +6,9 @@ import { GlobalProvider } from './components/GlobalContext';
 import Loader from './components/Loader';
 import ProtectedRoute from './components/ProtectedRoute';
 import './global.css';
+import './styles/searchPage.css';
 
-// const Profile = lazy(() => import("./components/Profile"));
+const SearchPage = lazy(() => import('./components/SearchPage'));
 
 createRoot(document.getElementById('root')).render(
   // GLOBAL STORAGE | TO STORE DATA THAT CAN BE ACCESSIBLE FROM EVERY COMPONENT
@@ -18,13 +19,14 @@ createRoot(document.getElementById('root')).render(
         {/* PUBLIC ROUTES | AVAILABLE FOR ALL USERS */}
         {/* ROTTE PUBBLICHE ACCESSIBILI DA TUTTI GLI UTENTI */}
         <Route
-          path=""
+          path="/"
           element={
             <Suspense fallback={<Loader isLoading={true} />}>
-              <div>
+              <SearchPage />
+              {/* <div>
                 <h2>sezione per tutti gli utenti</h2>
                 <img src="./src/assets/forher_bg.jpg" alt="" />
-              </div>
+              </div> */}
             </Suspense>
           }
           errorElement={<ErrorBoundary />}
