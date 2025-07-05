@@ -21,7 +21,10 @@ createRoot(document.getElementById('root')).render(
           path=""
           element={
             <Suspense fallback={<Loader isLoading={true} />}>
-              <div>sezione per tutti gli utenti</div>
+              <div>
+                <h2>sezione per tutti gli utenti</h2>
+                <img src="./src/assets/forher_bg.jpg" alt="" />
+              </div>
             </Suspense>
           }
           errorElement={<ErrorBoundary />}
