@@ -4,12 +4,23 @@
 /* CUSTOM DEFAULT STYLES VARIABLES */
 :root {
   /* COLOR PALETTE */
-  --custom-orange: #ff9c67;
-  --custom-green: #4fc27b;
-  --custom-blue: #23314d;
-  --custom-dark-blue: #000d25;
-  --custom-darker-blue: #030d1e;
-  --custom-white: #fcfff7;
+
+  /* FOR HER THEME */
+  --color-custom1: #ffffff;
+  --color-custom2: #212112;
+  --color-custom3: #d86363;
+  --color-custom4: #867c7c;
+  --color-custom5: #ffe2e2;
+  --bg-custom: url('./src/assets/forher_bg.jpg');
+
+  /* FOR HIM THEME */
+  /* --color-custom1: #fffbf0;
+  --color-custom2: #212112;
+  --color-custom3: #323332;
+  --color-custom4: #867c7c;
+  --color-custom5: #f7e1b5;
+    --bg-custom: url('./src/assets/forhim_bg.jpg');
+  */
 
   /* TYPOGRAPHY */
   /* --font-size-h1: 10px;
@@ -76,7 +87,6 @@ html {
 }
 
 body {
-  /* background-color: #0c0d11; */
   background-color: #212121;
 }
 
