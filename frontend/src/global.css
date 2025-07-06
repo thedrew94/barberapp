@@ -1,5 +1,5 @@
 /* IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* CUSTOM DEFAULT STYLES VARIABLES */
 :root {
@@ -65,7 +65,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: 'Lexend', sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;
@@ -84,7 +84,7 @@ button,
 fieldset,
 a {
   background: none;
-  background-color: none;
+  background-color: transparent;
   border: none;
   outline: none;
   font-family: inherit;
@@ -93,6 +93,10 @@ a {
   text-decoration: none;
   text-align: inherit;
   color: inherit;
+}
+
+button,
+a {
   cursor: pointer;
 }
 
@@ -193,6 +197,7 @@ img:not([src]) {
 .flex_row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .flex_col {
@@ -205,6 +210,18 @@ img:not([src]) {
   flex-direction: row;
   align-items: center;
   gap: 20px;
+}
+
+.flex_gap_sm {
+  gap: 10px;
+}
+
+.flex_gap_md {
+  gap: 20px;
+}
+
+.flex_gap_xl {
+  gap: 30px;
 }
 
 /* /////////////////////////////// */
