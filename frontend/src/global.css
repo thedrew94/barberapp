@@ -4,14 +4,20 @@
 /* CUSTOM DEFAULT STYLES VARIABLES */
 :root {
   /* COLOR PALETTE */
+  --color-custom1: #ffffff;
+  --color-custom2: #867c7c;
+  --color-custom3: #4b1c1f;
+  --color-custom4: #4b1c1f;
+  --color-custom5: #4b1c1f;
+  --bg-custom: url('./src/assets/forher_bg.jpg');
 
   /* FOR HER THEME */
-  --color-custom1: #ffffff;
+  /* --color-custom1: #ffffff;
   --color-custom2: #212112;
   --color-custom3: #d86363;
   --color-custom4: #867c7c;
   --color-custom5: #ffe2e2;
-  --bg-custom: url('./src/assets/forher_bg.jpg');
+  --bg-custom: url('./src/assets/forher_bg.jpg'); */
 
   /* FOR HIM THEME */
   /* --color-custom1: #fffbf0;

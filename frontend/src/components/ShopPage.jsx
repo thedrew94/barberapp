@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import BookingSteps from './BookingSteps';
 import ShopHeader from './ShopHeader';
+import BookingSteps from './BookingSteps';
 import ShopService from './ShopService';
 
 export default function ShopPage() {
@@ -10,7 +10,20 @@ export default function ShopPage() {
     <>
       <ShopHeader />
       <BookingSteps />
+      <div className="list_divider">
+        <h2>Per lui</h2>
+      </div>
       <ul className="shopservices_ul">
+        <ShopService />
+        <ShopService />
+        <ShopService />
+      </ul>
+      <div className="list_divider">
+        <h2>Per lei</h2>
+      </div>
+      <ul className="shopservices_ul">
+        <ShopService />
+        <ShopService />
         <ShopService />
       </ul>
     </>

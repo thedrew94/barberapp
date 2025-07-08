@@ -1,23 +1,14 @@
 export default function ShopService() {
   return (
     <li className="shopservices_li">
-      <div>
-        <div className="shopservices_info">
-          <span className="h4">$ 999.99</span>
+      <div className="shopservices_desciption">
+        <div className="shopservices_desciption_text">
+          <h6 className="h6_bold">Taglio di capelli con shampoo</h6>
+          <p className="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus veritatis dolore ex ab optio natus reprehenderit corporis</p>
         </div>
-        <div>
-          <img src="" alt="" />
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum atque, obcaecati harum, fugit eaque eius maxime est possimus rerum cumque numquam fugiat ratione!
-              Dolore cupiditate repellat consequuntur voluptatem officia saepe.
-            </p>
-          </div>
-        </div>
+        <span className="shopservices_price h6">$ 999.99</span>
       </div>
-      <div>
-        <button>prenota questo servizio</button>
-      </div>
+      <button className="shopservices_confirm_btn">Prenota questo servizio</button>
     </li>
   );
 }

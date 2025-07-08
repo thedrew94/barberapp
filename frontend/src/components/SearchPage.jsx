@@ -4,6 +4,14 @@ import { svgSelector } from '../utils/svgSelector';
 const themes = {
   forHer: {
     '--color-custom1': '#ffffff',
+    '--color-custom2': '#867c7c',
+    '--color-custom3': '#4b1c1f',
+    '--color-custom4': '#4b1c1f',
+    '--color-custom5': '#e7c1bf',
+    '--bg-custom': "url('./src/assets/forher_bg.jpg')",
+  },
+  forHerOld: {
+    '--color-custom1': '#ffffff',
     '--color-custom2': '#212112',
     '--color-custom3': '#d86363',
     '--color-custom4': '#867c7c',
