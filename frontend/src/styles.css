@@ -1,0 +1,91 @@
+.shopheader {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-custom5);
+  color: #212121;
+}
+
+.shopheader_back {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+.shopheader_service {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.shopheader_shopname {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.bookingsteps {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.bookingsteps li {
+  padding: 5px 10px;
+  color: var(--color-custom4);
+}
+
+.bookinsteps_active {
+  color: var(--color-custom3) !important;
+}
+
+.bookinsteps_active svg path {
+  stroke: var(--color-custom3) !important;
+  fill: var(--color-custom3) !important;
+}
+
+.bookingsteps li button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bookingsteps_step {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.bookingsteps_text {
+  font-size: 1.6rem;
+}
+
+.shopservices_ul {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.shopservices_li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr minmax(225px, 225px);
+  border: 3px solid var(--color-custom5);
+  border-radius: 5px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: #212121;
+}
+
+.shopservices_info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 10px;
+  color: var(--color-custom3);
+}

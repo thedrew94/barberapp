@@ -6,9 +6,11 @@ import { GlobalProvider } from './components/GlobalContext';
 import Loader from './components/Loader';
 import ProtectedRoute from './components/ProtectedRoute';
 import './global.css';
+import './styles.css';
 import './styles/searchPage.css';
 
 const SearchPage = lazy(() => import('./components/SearchPage'));
+const ShopPage = lazy(() => import('./components/ShopPage'));
 
 createRoot(document.getElementById('root')).render(
   // GLOBAL STORAGE | TO STORE DATA THAT CAN BE ACCESSIBLE FROM EVERY COMPONENT
@@ -23,10 +25,15 @@ createRoot(document.getElementById('root')).render(
           element={
             <Suspense fallback={<Loader isLoading={true} />}>
               <SearchPage />
-              {/* <div>
-                <h2>sezione per tutti gli utenti</h2>
-                <img src="./src/assets/forher_bg.jpg" alt="" />
-              </div> */}
+            </Suspense>
+          }
+          errorElement={<ErrorBoundary />}
+        />
+        <Route
+          path="/shop/:sID"
+          element={
+            <Suspense fallback={<Loader isLoading={true} />}>
+              <ShopPage />
             </Suspense>
           }
           errorElement={<ErrorBoundary />}
