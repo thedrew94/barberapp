@@ -11,14 +11,14 @@ export default function ShopPage() {
 
   return (
     <>
-      <ShopHeader />
-      <BookingSteps activeStep={activeStep} setActiveStep={setActiveStep} />
-      {/* <div className="shop_bg">
-        <img src="../src/assets/forher_bg.jpg" alt="" />
-        <h2>Cacca & Puppu</h2>
-      </div> */}
-      {activeStep === 1 && <ServicesPage />}
-      {activeStep === 2 && <BookingDatePage />}
+      <div className="shoppage_head">
+        <ShopHeader />
+        <BookingSteps activeStep={activeStep} setActiveStep={setActiveStep} />
+      </div>
+      <main className="shoppage_body">
+        {activeStep === 1 && <ServicesPage />}
+        {activeStep === 2 && <BookingDatePage />}
+      </main>
     </>
   );
 }

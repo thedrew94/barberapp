@@ -5,10 +5,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { GlobalProvider } from './components/GlobalContext';
 import Loader from './components/Loader';
 import ProtectedRoute from './components/ProtectedRoute';
-import './global.css';
-import './styles.css';
-import './styles/searchPage.css';
-import './styles/weekCalendar.css';
+import './styles/global.css';
+import './styles/styles.css';
 
 const SearchPage = lazy(() => import('./components/SearchPage'));
 const ShopPage = lazy(() => import('./components/ShopPage'));

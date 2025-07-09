@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { svgSelector } from '../utils/svgSelector';
+import { getFetch } from '../utils/getFetch';
+import { Link } from 'react-router-dom';
 
 const themes = {
   forHer: {
@@ -38,6 +40,7 @@ const themes = {
 
 export default function SearchPage() {
   const [theme, setTheme] = useState('forHer');
+  const [businessData, setBusinessData] = useState([]);
 
   function changeAppTheme({ theme = 'forHer' }) {
     setTheme(theme);
@@ -50,8 +53,11 @@ export default function SearchPage() {
     });
   }, [theme]);
 
-  function handleSubmit(e) {
+  // FETCH THE DATA FOR THE SHOPS AND RENDER THE RESULTS
+  async function handleSubmit(e) {
     e.preventDefault();
+    const fetchedData = await getFetch({ url: 'http://localhost:5001/api/getShop' });
+    setBusinessData(fetchedData.data);
   }
 
   return (
@@ -102,29 +108,36 @@ export default function SearchPage() {
         {/* results */}
         <div>
           <ul className="result_ul">
-            <li className="result_li">
-              <div className="result_li_actions">
-                <h2>Il nome del posto Cacca & Puppu 2</h2>
-                <button>
-                  {svgSelector({ svgName: 'bookmark', svgWidth: '18px', svgHeight: '18px', svgFill: '#867c7c' })}
-                  <p>Bookmark this place</p>
-                </button>
-              </div>
-              <div className="place_info">
-                {/* img slider */}
-                <div className="place_img">
-                  <img src="./src/assets/forher_bg.jpg" alt="" width="200px" height="200px" />
-                </div>
-                {/* info */}
-                <div className="place_text">
-                  <h3 className="place_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, illum tempore quisquam repellendus, quidem nobis recusandae, tenetur dicta perferendis quaerat
-                    odit? Sed, doloremque provident! Aliquam magnam consequuntur harum maxime numquam.
-                  </h3>
-                  <button className="place_open">Controlla disponibilita</button>
-                </div>
-              </div>
-            </li>
+            {businessData &&
+              businessData.map((bd, idx) => {
+                return (
+                  <li key={`shop_${idx}`} className="result_li">
+                    <div className="result_li_actions">
+                      <h2>Il nome del posto Cacca & Puppu 2</h2>
+                      <button>
+                        {svgSelector({ svgName: 'bookmark', svgWidth: '18px', svgHeight: '18px', svgFill: '#867c7c' })}
+                        <p>Bookmark this place</p>
+                      </button>
+                    </div>
+                    <div className="place_info">
+                      {/* img slider */}
+                      <div className="place_img">
+                        <img src="./src/assets/forher_bg.jpg" alt="" width="200px" height="200px" />
+                      </div>
+                      {/* info */}
+                      <div className="place_text">
+                        <h3 className="place_description">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, illum tempore quisquam repellendus, quidem nobis recusandae, tenetur dicta perferendis
+                          quaerat odit? Sed, doloremque provident! Aliquam magnam consequuntur harum maxime numquam.
+                        </h3>
+                        <Link to="/shop/123" className="place_open">
+                          Controlla disponibilita
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
         </div>
       </div>

@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 
 // Routes imports
 const authRoutes = require("./routes/authRoutes");
+const globalRoutes = require("./routes/globalRoutes");
 
 app.use(cookieParser());
 
@@ -40,6 +41,7 @@ app.use(express.static("public"));
 
 // Mount the routes
 app.use("/api/auth", authRoutes);
+app.use("/api", globalRoutes);
 
 // Global error handler TODO to redifine
 app.use((err, req, res, next) => {
