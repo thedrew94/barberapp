@@ -8,7 +8,7 @@ const themes = {
     '--color-custom3': '#4b1c1f',
     '--color-custom4': '#4b1c1f',
     '--color-custom5': '#e7c1bf',
-    '--bg-custom': "url('./src/assets/forher_bg.jpg')",
+    '--bg-custom': "url('../src/assets/forher_bg.jpg')",
   },
   forHerOld: {
     '--color-custom1': '#ffffff',
@@ -16,7 +16,7 @@ const themes = {
     '--color-custom3': '#d86363',
     '--color-custom4': '#867c7c',
     '--color-custom5': '#ffe2e2',
-    '--bg-custom': "url('./src/assets/forher_bg.jpg')",
+    '--bg-custom': "url('../src/assets/forher_bg.jpg')",
   },
   forHim: {
     '--color-custom1': '#fffbf0',
@@ -24,7 +24,7 @@ const themes = {
     '--color-custom3': '#323332',
     '--color-custom4': '#867c7c',
     '--color-custom5': '#f7e1b5',
-    '--bg-custom': "url('./src/assets/forhim_bg.jpg')",
+    '--bg-custom': "url('../src/assets/forhim_bg.jpg')",
   },
   forAnimals: {
     '--color-custom1': '#fffbf0',
@@ -32,7 +32,7 @@ const themes = {
     '--color-custom3': '#323332',
     '--color-custom4': '#867c7c',
     '--color-custom5': '#f7e1b5',
-    '--bg-custom': "url('./src/assets/foranimal_bg.jpg')",
+    '--bg-custom': "url('../src/assets/foranimal_bg.jpg')",
   },
 };
 

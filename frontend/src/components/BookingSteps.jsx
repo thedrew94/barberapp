@@ -1,19 +1,12 @@
-import { useState } from 'react';
 import { svgSelector } from '../utils/svgSelector';
 
-export default function BookingSteps({ activeStep = 1 }) {
-  const [currentActiveStep, setCurrentActiveStep] = useState(activeStep);
-
-  function handleStepClick({ step = 1 }) {
-    setCurrentActiveStep(step);
-  }
-
+export default function BookingSteps({ activeStep = 1, setActiveStep = () => {} }) {
   return (
     <ul className="bookingsteps">
-      <li className={`${currentActiveStep >= 1 && 'bookinsteps_active'}`}>
+      <li className={`${activeStep >= 1 && 'bookinsteps_active'}`}>
         <button
           onClick={() => {
-            handleStepClick({ step: 1 });
+            setActiveStep(1);
           }}>
           <div className="flex_row flex_gap_sm">
             {svgSelector({ svgName: 'ticket', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
@@ -25,13 +18,13 @@ export default function BookingSteps({ activeStep = 1 }) {
           {svgSelector({ svgName: 'arrow_right', svgWidth: '30px', svgHeight: '100%', svgFill: '#867c7c' })}
         </button>
       </li>
-      <li className={`${currentActiveStep >= 2 && 'bookinsteps_active'}`}>
+      <li className={`${activeStep >= 2 && 'bookinsteps_active'}`}>
         <button
           onClick={() => {
-            handleStepClick({ step: 2 });
+            setActiveStep(2);
           }}>
           <div className="flex_row flex_gap_sm">
-            {svgSelector({ svgName: 'ticket', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
+            {svgSelector({ svgName: 'calendar', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
             <div>
               <span className="bookingsteps_step">STEP 02</span>
               <p className="bookingsteps_text">Seleziona la data</p>
@@ -40,13 +33,13 @@ export default function BookingSteps({ activeStep = 1 }) {
           {svgSelector({ svgName: 'arrow_right', svgWidth: '30px', svgHeight: '100%', svgFill: '#867c7c' })}
         </button>
       </li>
-      <li className={`${currentActiveStep >= 3 && 'bookinsteps_active'}`}>
+      <li className={`${activeStep >= 3 && 'bookinsteps_active'}`}>
         <button
           onClick={() => {
-            handleStepClick({ step: 3 });
+            setActiveStep(3);
           }}>
           <div className="flex_row flex_gap_sm">
-            {svgSelector({ svgName: 'ticket', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
+            {svgSelector({ svgName: 'file', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
             <div>
               <span className="bookingsteps_step">STEP 03</span>
               <p className="bookingsteps_text">Conferma dati</p>
@@ -55,18 +48,19 @@ export default function BookingSteps({ activeStep = 1 }) {
           {svgSelector({ svgName: 'arrow_right', svgWidth: '30px', svgHeight: '100%', svgFill: '#867c7c' })}
         </button>
       </li>
-      <li className={`${currentActiveStep >= 4 && 'bookinsteps_active'}`}>
+      <li className={`${activeStep >= 4 && 'bookinsteps_active'}`}>
         <button
           onClick={() => {
-            handleStepClick({ step: 4 });
+            setActiveStep(4);
           }}>
           <div className="flex_row flex_gap_sm">
-            {svgSelector({ svgName: 'ticket', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
+            {svgSelector({ svgName: 'confirm', svgWidth: '28px', svgHeight: '28px', svgFill: '#867c7c' })}
             <div>
               <span className="bookingsteps_step">STEP 04</span>
               <p className="bookingsteps_text">Riepilogo</p>
             </div>
           </div>
+          {svgSelector({ svgName: 'arrow_right', svgWidth: '30px', svgHeight: '100%', svgFill: '#867c7c' })}
         </button>
       </li>
     </ul>

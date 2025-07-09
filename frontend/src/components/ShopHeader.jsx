@@ -4,7 +4,7 @@ import { svgSelector } from '../utils/svgSelector';
 export default function ShopHeader() {
   return (
     <div className="shopheader">
-      <Link to="/home" className="shopheader_back">
+      <Link to="/" className="shopheader_back">
         {svgSelector({ svgName: 'goback', svgWidth: '42px', svgHeight: '42px', svgFill: '#481b1b' })}
       </Link>
       <h2 className="shopheader_service">PRENOTA SERVIZIO</h2>

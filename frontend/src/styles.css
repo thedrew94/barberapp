@@ -40,7 +40,12 @@
 .bookingsteps li {
   width: 100%;
   padding: 5px 10px;
+  border-radius: 3px;
   color: var(--color-custom2);
+}
+
+.bookingsteps li:hover {
+  background-color: #f6f7f6;
 }
 
 .bookinsteps_active {
@@ -61,14 +66,14 @@
   gap: 10px;
 }
 
-.bookingsteps li:last-child button {
+/* .bookingsteps li:last-child button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100%;
   gap: 10px;
-}
+} */
 
 .bookingsteps_step {
   font-size: 1.9rem;
@@ -133,8 +138,22 @@
   max-width: 850px;
 }
 
-.list_divider h2 {
+.list_divider h3 {
   font-size: 2rem;
   font-weight: normal;
   color: #481b1b;
+}
+
+.shop_bg {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.shop_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

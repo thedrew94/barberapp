@@ -1,31 +1,24 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ShopHeader from './ShopHeader';
 import BookingSteps from './BookingSteps';
-import ShopService from './ShopService';
+import ServicesPage from './ServicesPage';
+import ShopHeader from './ShopHeader';
+import BookingDatePage from './BookingDatePage';
 
 export default function ShopPage() {
+  const [activeStep, setActiveStep] = useState(1);
   const { sID } = useParams();
 
   return (
     <>
       <ShopHeader />
-      <BookingSteps />
-      <div className="list_divider">
-        <h2>Per lui</h2>
-      </div>
-      <ul className="shopservices_ul">
-        <ShopService />
-        <ShopService />
-        <ShopService />
-      </ul>
-      <div className="list_divider">
-        <h2>Per lei</h2>
-      </div>
-      <ul className="shopservices_ul">
-        <ShopService />
-        <ShopService />
-        <ShopService />
-      </ul>
+      <BookingSteps activeStep={activeStep} setActiveStep={setActiveStep} />
+      {/* <div className="shop_bg">
+        <img src="../src/assets/forher_bg.jpg" alt="" />
+        <h2>Cacca & Puppu</h2>
+      </div> */}
+      {activeStep === 1 && <ServicesPage />}
+      {activeStep === 2 && <BookingDatePage />}
     </>
   );
 }
