@@ -25,7 +25,7 @@ const themes = {
     '--color-custom1': '#fffbf0',
     '--color-custom2': '#212112',
     '--color-custom3': '#323332',
-    '--color-custom4': '#867c7c',
+    '--color-custom4': '#212121',
     '--color-custom5': '#f7e1b5',
     '--bg-custom': "url('../src/assets/forhim_bg.jpg')",
   },
@@ -44,6 +44,8 @@ export default function SearchPage() {
   const [businessData, setBusinessData] = useState(null);
 
   function changeAppTheme({ theme = 'forHer' }) {
+    // reset the search results to the initial status = null
+    setBusinessData(null);
     setTheme(theme);
   }
 
@@ -57,7 +59,7 @@ export default function SearchPage() {
   // FETCH THE DATA FOR THE SHOPS AND RENDER THE RESULTS
   async function handleSubmit(e) {
     e.preventDefault();
-    const fetchedData = await getFetch({ url: 'http://localhost:5001/api/getShop' });
+    const fetchedData = await getFetch({ url: 'http://localhost:5001/api/getShop', params: { s: 'test' } });
     setBusinessData(fetchedData.data);
   }
 
@@ -70,21 +72,21 @@ export default function SearchPage() {
       <div className="search_form">
         <div className="search_for">
           <button
-            className="stnd_btn stnd_btn_sltd"
+            className={`stnd_btn ${theme === 'forHer' ? 'stnd_btn_sltd' : ''}`}
             onClick={() => {
               changeAppTheme({ theme: 'forHer' });
             }}>
             PER LEI
           </button>
           <button
-            className="stnd_btn"
+            className={`stnd_btn ${theme === 'forHim' ? 'stnd_btn_sltd' : ''}`}
             onClick={() => {
               changeAppTheme({ theme: 'forHim' });
             }}>
             PER LUI
           </button>
           <button
-            className="stnd_btn"
+            className={`stnd_btn ${theme === 'forAnimals' ? 'stnd_btn_sltd' : ''}`}
             onClick={() => {
               changeAppTheme({ theme: 'forAnimals' });
             }}>
@@ -150,11 +152,13 @@ export default function SearchPage() {
                           <div className="spotlight_business_info_container">
                             <div className="spotlight_business_info">
                               {svgSelector({ svgName: 'store', svgWidth: '24px', svgHeight: '24px', svgFill: '#481b1b' })}
-                              <h5 className="h4">Il barbiere Bastardo</h5>
+                              <h5 className="h4">{bd.businessName}</h5>
                             </div>
                             <div className="spotlight_business_info">
                               {svgSelector({ svgName: 'location', svgWidth: '24px', svgHeight: '24px', svgFill: '#481b1b' })}
-                              <h5 className="h4">Roma via della marsala 9999</h5>
+                              <h5 className="h4">
+                                {bd.businessCity} {bd.businessAddress}
+                              </h5>
                             </div>
                             <div className="spotlight_business_info">
                               {svgSelector({ svgName: 'feedback', svgWidth: '24px', svgHeight: '24px', svgFill: '#481b1b' })}
@@ -164,10 +168,10 @@ export default function SearchPage() {
                               {svgSelector({ svgName: 'bookmark', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                               <p className="h5">Aggiungi ai preferiti</p>
                             </button>
-                            <button className="spotlight_shops_btns h5">
+                            <Link to="/shop/123" className="spotlight_shops_btns h5">
                               {svgSelector({ svgName: 'booking', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                               <p>Controlla disponibilita</p>
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </li>
@@ -209,10 +213,10 @@ export default function SearchPage() {
                   {svgSelector({ svgName: 'bookmark', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p className="h5">Aggiungi ai preferiti</p>
                 </button>
-                <button className="spotlight_shops_btns h5">
+                <Link to="/shop/123" className="spotlight_shops_btns h5">
                   {svgSelector({ svgName: 'booking', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p>Controlla disponibilita</p>
-                </button>
+                </Link>
               </div>
             </div>
           </li>
@@ -236,10 +240,10 @@ export default function SearchPage() {
                   {svgSelector({ svgName: 'bookmark', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p className="h5">Aggiungi ai preferiti</p>
                 </button>
-                <button className="spotlight_shops_btns h5">
+                <Link to="/shop/123" className="spotlight_shops_btns h5">
                   {svgSelector({ svgName: 'booking', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p>Controlla disponibilita</p>
-                </button>
+                </Link>
               </div>
             </div>
           </li>
@@ -263,10 +267,10 @@ export default function SearchPage() {
                   {svgSelector({ svgName: 'bookmark', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p className="h5">Aggiungi ai preferiti</p>
                 </button>
-                <button className="spotlight_shops_btns h5">
+                <Link to="/shop/123" className="spotlight_shops_btns h5">
                   {svgSelector({ svgName: 'booking', svgWidth: '20px', svgHeight: '20px', svgFill: '#fff' })}
                   <p>Controlla disponibilita</p>
-                </button>
+                </Link>
               </div>
             </div>
           </li>
