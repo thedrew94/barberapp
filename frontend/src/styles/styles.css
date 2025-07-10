@@ -252,7 +252,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, transparent 100%);
   overflow: hidden;
 }
 
@@ -287,7 +287,7 @@
 
 .search_form {
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 10px;
   max-width: 800px;
 }
 
@@ -304,13 +304,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 25px 20px 22px;
+  padding: 15px;
   box-shadow: var(--color-custom5) 0px -2px 6px 0px inset;
   background-color: #fff;
   border: 1px solid var(--color-custom5);
   border-radius: 15px;
   color: var(--color-custom4);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+}
+
+.stnd_btn_sltd {
+  background-color: #481b1b;
+  color: #fff;
+  box-shadow: none;
 }
 
 .main_search_form {
@@ -360,7 +366,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 0;
+  color: #481b1b;
 }
 
 .result_li {
@@ -374,6 +380,10 @@
   border-radius: 5px;
   box-shadow: var(--color-custom5) 0px -2px 6px 0px inset;
   background-color: #fff;
+}
+
+.nothing_found_text {
+  text-align: center;
 }
 
 .result_li_actions {
@@ -506,4 +516,119 @@
 
 /* //////////////////////// */
 /* SHOP PAGE -- end -- */
+/* //////////////////////// */
+
+/* //////////////////////// */
+/* SPOTLIGHT COMPONENT -- start -- */
+/* //////////////////////// */
+
+.spotlight_shops {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #481b1b;
+}
+
+.spotlight_title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 0 10px;
+  margin: 30px 0;
+  color: #481b1b;
+  border-bottom: 2px dotted #481b1b;
+}
+
+.spotlight_business {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 300px);
+  min-height: 250px;
+  height: 250px;
+  color: #481b1b;
+}
+
+.spotlight_business img {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.spotlight_business_info_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spotlight_business_info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.spotlight_text {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #481b1b;
+}
+
+.spotlight_btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.spotlight_act_btns {
+  width: 16px;
+  height: 16px;
+  background-color: #481b1b;
+  border-radius: 50%;
+}
+
+.spotlight_shops_btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #481b1b;
+  color: #fff;
+  text-align: center;
+}
+
+.spotlight_list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.spotlight_list li {
+  min-width: 250px;
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  transform: translateX(-150px);
+  opacity: 0.35;
+  filter: blur(1px);
+}
+
+.spotlight_list li:nth-child(2) {
+  min-width: 600px;
+  width: 600px;
+  height: 250px;
+  gap: 10px;
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* //////////////////////// */
+/* SPOTLIGHT COMPONENT -- end -- */
 /* //////////////////////// */
